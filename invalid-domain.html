@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<title>Iframe example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://maheshkk.github.io/samsung-shop/src/js/pg.js"></script>
+<script src="https://maheshkk.github.io/samsung-shop/src/js/webpay.js"></script>
+<style>
+    .button{
+        width: 150px;
+        height: 40px;
+        background-color: #f0ad4e;
+        border: #FFFFFF solid 2px;
+        color: #FFFFFF;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+    	margin: 0 auto;
+    	padding-bottom:15px;
+    }
+    .button:hover {
+        background-color: #FFFFFF;
+        color: #f0ad4e;
+        border: #f0ad4e solid 2px;
+    }
+</style>
+</head>
+<body>
+    <div class="button" id="button">
+        <h5>invalid domain with allowpaymentrequest attr</h5>
+    </div>
+</body>
+<script>
+    (function(){
+      var button = document.getElementById('button').addEventListener('click', donate);
+      function donate(){
+        var price = '$350.00';
+        var item = [{
+          'label': 'invalid domain',
+          'value': price
+        }];
+        var webpayment = new webpay();
+            webpayment.setup(item,price);
+      }
+    })();
+</script>
+</html>
