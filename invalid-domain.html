@@ -16,7 +16,8 @@
         text-align: center;
         display: block;
     	margin: 0 auto;
-    	padding-bottom:15px;
+    	padding-bottom:30px;
+        font-family: arial;
     }
     .button:hover {
         background-color: #FFFFFF;
@@ -29,6 +30,11 @@
     <div class="button" id="button">
         <h5>invalid domain with allowpaymentrequest attr</h5>
     </div>
+    <select class="form-select" id="serverSwitch">
+        <option value="staging">Staging</option>
+        <option value="production">Production</option>
+        <option value="stripe">Stripe</option>
+    </select>
 </body>
 <script>
     (function(){
